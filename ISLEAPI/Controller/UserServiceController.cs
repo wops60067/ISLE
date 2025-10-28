@@ -27,11 +27,26 @@ namespace ISLE.Controllers
             return Ok(new{ message = "User registered successfully."});
         }
 
+        [HttpPost]
+        public IActionResult Login([FromBody] LoginRequest request)
+        {
+            var user = _userService.Login(request.Email, request.Password);
+            if(user == null){
+                return Unauthorized(new { message="帳號或密碼錯誤"});
+            }
+            return Ok(new { message = "登入成功", user });
+        }
+
     }
     public class RegisterRequest
     {
         public required string UserName { get; set; }
         public required string Email { get; set; }
         public required string Password { get; set; }
+    }
+    public class LoginRequest
+    {
+        public string Email { get; set; } = string.Empty;
+        public string Password { get; set; } = string.Empty;
     }
 }

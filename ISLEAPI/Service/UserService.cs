@@ -32,5 +32,22 @@ namespace ISLE.Services
             var rows = _db.Execute(sql, new { UserName = userName, Email = email, PasswordHash = passwordHash });
             return rows > 0;
         }
+        //登入
+        public object? Login(string email, string password)
+        {
+            var sql = "select id,name,email,password from Users WHERE email = @Email";
+            var user = _db.QueryFirstOrDefault<dynamic>(sql ,new { Email = email });
+
+            if(user == null) return null;
+
+            bool idPasswordValid = BCrypt.Net.BCrypt.Verify(password,(string)user.password_hash);
+            if(!idPasswordValid) return null;
+
+            return{
+                ID = user.id,
+                Name = user.name,
+                Email = user.email
+            };
+        }
     }
 }
