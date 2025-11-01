@@ -10,13 +10,7 @@
       }
     ],
     "routes": [
-      {
-        "src": "/(.*)",
-        "has": [
-          { "type": "file", "value": "/$1" }
-        ],
-        "dest": "/$1"
-      },
+      { "handle": "filesystem" },
       { "src": "/(.*)", "dest": "/index.html" }
     ]
   }
