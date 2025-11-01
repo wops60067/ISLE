@@ -2,14 +2,21 @@
     "version": 2,
     "builds": [
       {
-        "src": "package.json",
+        "src": "ISLE/package.json",
         "use": "@vercel/static-build",
         "config": {
-            "distDir": "dist/isle/browser"
+          "distDir": "dist/isle/browser"
         }
       }
     ],
     "routes": [
+      {
+        "src": "/(.*)",
+        "has": [
+          { "type": "file", "value": "/$1" }
+        ],
+        "dest": "/$1"
+      },
       { "src": "/(.*)", "dest": "/index.html" }
     ]
   }
