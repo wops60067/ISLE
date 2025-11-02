@@ -1,0 +1,93 @@
+
+:host {
+  display: flex;
+  justify-content: center; /* 水平置中 */
+  align-items: center;     /* 垂直置中 */
+  background-color: #f8f9fa;
+  min-height: 100vh;
+  color: #111827; /* 設定全域字體顏色 */
+}
+  
+.register-container {
+  margin-top: 20px;
+  margin-bottom: 20px;
+  max-width: 420px;
+  width: 100%;
+  padding: 24px;
+  background: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 6px 24px rgba(0, 0, 0, 0.08);
+}
+
+.title {
+  color: #111827;
+  margin: 0 0 16px;
+  font-size: 24px;
+  font-weight: 700;
+  text-align: center;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.form-control {
+  display: flex;
+  flex-direction: column;
+}
+
+label {
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"] {
+  padding: 10px 12px;
+  border: 1px solid #d9d9d9;
+  border-radius: 8px;
+  font-size: 14px;
+}
+
+.form-control.invalid input {
+  border-color: #e5484d;
+}
+
+.error {
+  color: #b42318;
+  font-size: 12px;
+  margin-top: 6px;
+}
+
+.btn {
+  padding: 12px;
+  border: none;
+  border-radius: 8px;
+  background: #111827;
+  color: #fff;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.btn[disabled] {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.login-hint {
+  margin-top: 12px;
+  text-align: center;
+  font-size: 14px;
+}
+
+.login-hint a {
+  color: #2563eb;
+  text-decoration: none;
+}
+
+.login-hint a:hover {
+  text-decoration: underline;
+}

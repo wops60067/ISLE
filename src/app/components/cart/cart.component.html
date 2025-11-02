@@ -1,0 +1,95 @@
+<div class="cart-container">
+  <div class="cart-header">
+    <h1>購物車</h1>
+    <div class="cart-summary">
+      <span class="item-count">{{ getTotalItems() }} 件商品</span>
+    </div>
+  </div>
+
+  <div class="cart-content">
+    <!-- 購物車商品列表 -->
+    <div class="cart-items" *ngIf="cartItems.length > 0; else emptyCart">
+      <div class="cart-item" *ngFor="let item of cartItems; let i = index">
+        <div class="item-image">
+          <!-- <img [src]="item.image" [alt]="item.name" /> -->
+        </div>
+        
+        <div class="item-details">
+          <h3 class="item-name">{{ item.name }}</h3>
+          <!-- <p class="item-description">{{ item.description }}</p> -->
+          <div class="item-price">
+            <span class="current-price">NT$ {{ item.price | number:'1.0-0' }}</span>
+            <!-- <span class="original-price" *ngIf="item.originalPrice && item.originalPrice > item.price">
+              NT$ {{ item.originalPrice | number:'1.0-0' }}
+            </span> -->
+          </div>
+        </div>
+
+        <div class="item-controls">
+          <div class="quantity-controls">
+            <button 
+              class="quantity-btn" 
+              (click)="decreaseQuantity(i)"
+              [disabled]="item.quantity <= 1">
+              -
+            </button>
+            <span class="quantity">{{ item.quantity }}</span>
+            <button 
+              class="quantity-btn" 
+              (click)="increaseQuantity(i)">
+              +
+            </button>
+          </div>
+          
+          <div class="item-total">
+            NT$ {{ (item.price * item.quantity) | number:'1.0-0' }}
+          </div>
+          
+          <button 
+            class="remove-btn" 
+            (click)="removeItem(i)"
+            title="移除商品">
+            <i class="remove-icon">×</i>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- 空購物車狀態 -->
+    <ng-template #emptyCart>
+      <div class="empty-cart">
+        <div class="empty-cart-icon">🛒</div>
+        <h2>購物車是空的</h2>
+        <p>還沒有添加任何商品到購物車</p>
+        <button class="continue-shopping-btn" routerLink="/">繼續購物</button>
+      </div>
+    </ng-template>
+
+    <!-- 購物車摘要 -->
+    <div class="cart-summary-section" *ngIf="cartItems.length > 0">
+      <div class="summary-details">
+        <div class="summary-row">
+          <span>商品小計</span>
+          <span>NT$ {{ getSubtotal() | number:'1.0-0' }}</span>
+        </div>
+        <div class="summary-row">
+          <span>運費</span>
+          <span class="free-shipping">免費</span>
+        </div>
+        <div class="summary-row total-row">
+          <span>總計</span>
+          <span class="total-price">NT$ {{ getTotal() | number:'1.0-0' }}</span>
+        </div>
+      </div>
+      
+      <div class="checkout-actions">
+        <button class="checkout-btn" (click)="proceedToCheckout()">
+          前往結帳
+        </button>
+        <button class="continue-shopping-btn" routerLink="/">
+          繼續購物
+        </button>
+      </div>
+    </div>
+  </div>
+</div>

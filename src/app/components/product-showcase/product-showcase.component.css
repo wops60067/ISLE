@@ -1,0 +1,431 @@
+/* 產品展示區域樣式 - 參考 Nike.com 設計 */
+.product-showcase {
+  padding: 6rem 0;
+  background: #fafafa;
+  position: relative;
+}
+
+.container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+/* 區塊標題 */
+.section-header {
+  text-align: center;
+  margin-bottom: 4rem;
+}
+
+.section-title {
+  font-size: clamp(2rem, 3vw, 3.2rem);
+  font-weight: 500;
+  color: #1a1a1a;
+  margin: 0 0 1rem 0;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+.section-subtitle {
+  font-size: 1.2rem;
+  color: #666;
+  max-width: 600px;
+  margin: 0 auto;
+  line-height: 1.6;
+}
+
+/* 產品網格 */
+.products-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  margin-bottom: 4rem;
+}
+
+/* 產品卡片 */
+.product-card {
+  background: white;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  transition: all 0.3s ease;
+  position: relative;
+  cursor: pointer;
+}
+
+.product-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+}
+
+.product-card.featured {
+  grid-column: span 2;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+}
+
+/* 產品圖片區域 */
+.product-image {
+  position: relative;
+  height: 300px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+  overflow: hidden;
+}
+
+.product-card.featured .product-image {
+  height: 400px;
+}
+
+/* 香水瓶設計 */
+.perfume-bottle-small {
+  width: 80px;
+  height: 120px;
+  position: relative;
+  animation: float 3s ease-in-out infinite;
+}
+
+.bottle-1 {
+  background: linear-gradient(135deg, #8B5CF6 0%, #A855F7 100%);
+  border-radius: 40px 40px 20px 20px;
+  box-shadow: 0 10px 30px rgba(139, 92, 246, 0.3);
+}
+
+.bottle-2 {
+  background: linear-gradient(135deg, #06B6D4 0%, #0891B2 100%);
+  border-radius: 40px 40px 20px 20px;
+  box-shadow: 0 10px 30px rgba(6, 182, 212, 0.3);
+}
+
+.bottle-3 {
+  background: linear-gradient(135deg, #D97706 0%, #EA580C 100%);
+  border-radius: 40px 40px 20px 20px;
+  box-shadow: 0 10px 30px rgba(217, 119, 6, 0.3);
+}
+
+.bottle-4 {
+  background: linear-gradient(135deg, #10B981 0%, #059669 100%);
+  border-radius: 40px 40px 20px 20px;
+  box-shadow: 0 10px 30px rgba(16, 185, 129, 0.3);
+}
+
+/* 產品標籤 */
+.product-badge {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  background: #ff4444;
+  color: white;
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+/* 產品資訊 */
+.product-info {
+  padding: 2rem;
+}
+
+.product-name {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #1a1a1a;
+  margin: 0 0 0.5rem 0;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+.product-description {
+  color: #666;
+  margin: 0 0 1.5rem 0;
+  line-height: 1.5;
+}
+
+.product-price {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.current-price {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #1a1a1a;
+}
+
+.original-price {
+  font-size: 1.1rem;
+  color: #999;
+  text-decoration: line-through;
+}
+
+/* 按鈕樣式 */
+.add-to-cart-btn {
+  width: 100%;
+  padding: 1rem;
+  font-size: 1rem;
+  font-weight: 600;
+  border-radius: 50px;
+  text-transform: none;
+  transition: all 0.3s ease;
+}
+
+.add-to-cart-btn:hover {
+  transform: translateY(-2px);
+}
+
+/* 查看更多區域 */
+.view-more-section {
+  text-align: center;
+}
+
+.view-more-btn {
+  padding: 1rem 2rem;
+  font-size: 1rem;
+  font-weight: 600;
+  border-radius: 50px;
+  text-transform: none;
+  color: #1a1a1a;
+  border: 2px solid #1a1a1a;
+  transition: all 0.3s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.view-more-btn:hover {
+  background: #1a1a1a;
+  color: white;
+  transform: translateY(-2px);
+}
+
+/* 動畫效果 */
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-5px);
+  }
+}
+
+/* 響應式設計 */
+@media (max-width: 1024px) {
+  .product-card.featured {
+    grid-column: span 1;
+    display: block;
+  }
+  
+  .product-card.featured .product-image {
+    height: 300px;
+  }
+}
+
+@media (max-width: 768px) {
+  .product-showcase {
+    padding: 4rem 0;
+  }
+  
+  .container {
+    padding: 0 1rem;
+  }
+  
+  .products-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+  
+  .section-header {
+    margin-bottom: 3rem;
+  }
+  
+  .section-title {
+    font-size: clamp(2rem, 8vw, 3rem);
+  }
+  
+  .section-subtitle {
+    font-size: 1.1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .product-info {
+    padding: 1.5rem;
+  }
+  
+  .product-name {
+    font-size: 1.3rem;
+  }
+  
+  .current-price {
+    font-size: 1.3rem;
+  }
+  
+  .add-to-cart-btn {
+    padding: 0.8rem;
+    font-size: 0.9rem;
+  }
+}
+
+/* 當季主打輪播 */
+.seasonal-highlight {
+  padding: 4rem 0 2rem 0;
+  background: #ffffff;
+}
+
+.seasonal-header {
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+
+.seasonal-title {
+  font-size: clamp(2rem, 3vw, 3.2rem);
+  font-weight: 500;
+  color: #1a1a1a;
+  margin: 0;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+.seasonal-carousel {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.slides-wrapper {
+  overflow: hidden;
+  width: 100%;
+  border-radius: 20px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+}
+
+.slides {
+  display: flex;
+  transition: transform 0.5s ease;
+  width: 100%;
+}
+
+.slide {
+  min-width: 100%;
+  position: relative;
+  background: #f5f5f5;
+}
+
+.slide-image {
+  width: 100%;
+  height: 380px;
+  object-fit: cover;
+  display: block;
+}
+
+.slide-caption {
+  position: absolute;
+  left: 2rem;
+  bottom: 2rem;
+  background: rgba(0, 0, 0, 0.45);
+  color: #fff;
+  padding: 1rem 1.25rem;
+  border-radius: 12px;
+  max-width: min(80%, 720px);
+}
+
+.slide-title {
+  margin: 0 0 0.25rem 0;
+  font-size: clamp(1.25rem, 2.2vw, 1.8rem);
+  font-weight: 700;
+}
+
+.slide-desc {
+  margin: 0;
+  font-size: 0.95rem;
+  line-height: 1.5;
+}
+
+.nav-btn {
+  border: 2px solid #1a1a1a;
+  background: #ffffff;
+  color: #1a1a1a;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.nav-btn:hover {
+  background: #1a1a1a;
+  color: #ffffff;
+  transform: translateY(-2px);
+}
+
+.nav-btn.prev {
+  margin-left: 0.5rem;
+}
+
+.nav-btn.next {
+  margin-right: 0.5rem;
+}
+
+.dots {
+  display: flex;
+  justify-content: center;
+  gap: 0.5rem;
+  margin-top: 1rem;
+}
+
+.dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: #cfcfcf;
+  border: none;
+  cursor: pointer;
+  transition: background 0.2s ease, transform 0.2s ease;
+}
+
+.dot:hover {
+  transform: translateY(-1px);
+}
+
+.dot.active {
+  background: #1a1a1a;
+}
+
+/* 全幅輪播寬度設定 */
+.seasonal-highlight .container {
+  max-width: none;
+  padding: 0;
+}
+
+.seasonal-header {
+  padding: 0 2rem;
+}
+
+.seasonal-carousel {
+  gap: 0;
+}
+
+.slides-wrapper {
+  border-radius: 0;
+  box-shadow: none;
+}
+
+.slide-image {
+  width: 100vw;
+  height: 420px;
+}
+
+@media (max-width: 768px) {
+  .slide-image {
+    height: 300px;
+  }
+}

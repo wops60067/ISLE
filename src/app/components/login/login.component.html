@@ -1,0 +1,33 @@
+<div class="login-container">
+  <h2 class="title">會員登入</h2>
+
+  <form [formGroup]="form" (ngSubmit)="onSubmit()" novalidate>
+    <div class="form-control" [class.invalid]="form.controls['email'].invalid && form.controls['email'].touched">
+      <label for="email">電子郵件</label>
+      <input id="email" type="email" formControlName="email" placeholder="name@example.com" />
+      <div class="error" *ngIf="form.controls['email'].errors && form.controls['email'].touched">
+        <span *ngIf="form.controls['email'].errors['required']">請輸入電子郵件</span>
+        <span *ngIf="form.controls['email'].errors['email']">格式不正確</span>
+      </div>
+    </div>
+
+    <div class="form-control" [class.invalid]="form.controls['password'].invalid && form.controls['password'].touched">
+      <label for="password">密碼</label>
+      <input id="password" type="password" formControlName="password" placeholder="請輸入密碼" />
+      <div class="error" *ngIf="form.controls['password'].errors && form.controls['password'].touched">
+        <span *ngIf="form.controls['password'].errors['required']">請輸入密碼</span>
+        <span *ngIf="form.controls['password'].errors['minlength']">至少 6 個字元</span>
+      </div>
+    </div>
+
+    <button type="submit" class="btn" [disabled]="form.invalid || isSubmitting()">
+      {{ isSubmitting() ? '登入中…' : '登入' }}
+    </button>
+  </form>
+
+  <div class="register-hint">
+    沒有帳戶嗎？ <a routerLink="/register">註冊</a>
+  </div>
+</div>
+
+

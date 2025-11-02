@@ -1,0 +1,32 @@
+<!-- 導航欄 -->
+ <section id="home">
+  <mat-toolbar class="header-toolbar">
+    <div class="header-container">
+     <!-- Logo -->
+     <a href="#home" class="logo" aria-label="返回首頁">
+       <div class="logo-image"></div>
+     </a>
+      
+      <!-- 導航選單 -->
+      <nav class="nav-menu">
+        <a href="#home" class="nav-link">首頁</a>
+        <a href="#products" class="nav-link">產品</a>
+        <a href="#contact" class="nav-link">聯絡我們</a>
+      </nav>
+      
+      <!-- 右側操作區 -->
+      <div class="header-actions">
+        <button mat-icon-button class="search-btn">
+          <mat-icon>search</mat-icon>
+        </button>
+        <button mat-icon-button class="cart-btn" (click)="goToCart()">
+          <mat-icon>shopping_cart</mat-icon>
+          <span class="cart-badge">0</span>
+        </button>
+        <button mat-icon-button class="user-btn" (click)="goToLogin()">
+          <mat-icon style="color: black;">account_circle</mat-icon>
+        </button>
+      </div>
+    </div>
+  </mat-toolbar>
+</section>
