@@ -8,7 +8,10 @@ export interface Register {
   email: string;
   password: string;
 }
-
+export interface Login {
+  email: string;
+  password: string;
+}
 @Injectable({
   providedIn: 'root'
 })
@@ -19,5 +22,8 @@ export class LoginService {
 
   register(register: Register):Observable<any>{
     return this.http.post(`${this.apiURL}/register`,register);
+  }
+  login(login: Login):Observable<any>{
+    return this.http.post(`${this.apiURL}/login`,login);
   }
 }

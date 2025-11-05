@@ -20,7 +20,7 @@
       </div>
     </div>
 
-    <button type="submit" class="btn" [disabled]="form.invalid || isSubmitting()">
+    <button type="submit" class="btn" [disabled]="form.invalid || isSubmitting()" (click)="onSubmit()">
       {{ isSubmitting() ? '登入中…' : '登入' }}
     </button>
   </form>
