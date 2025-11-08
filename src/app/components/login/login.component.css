@@ -91,4 +91,23 @@ input[type="password"] {
   text-decoration: underline;
 }
 
+/* 讓圖示置入輸入框右側 */
+.input-with-icon {
+  position: relative;
+  height: 40px; /* 固定高度避免重繪 */
+}
+
+.input-with-icon input {
+  width: 100%;
+  padding-right: 40px; /* 預留圖示空間 */
+}
+
+.toggle-visibility {
+  position: absolute;
+  right: 8px;
+  top: 50%;
+  transform: translateY(-50%);
+  padding: 4px;
+}
+
 

@@ -13,7 +13,12 @@
 
     <div class="form-control" [class.invalid]="form.controls['password'].invalid && form.controls['password'].touched">
       <label for="password">密碼</label>
-      <input id="password" type="password" formControlName="password" placeholder="請輸入密碼" />
+      <div class="input-with-icon">
+        <input id="password" [type]="showPassword() ? 'text' : 'password'" formControlName="password" placeholder="請輸入密碼" />
+        <button type="button" mat-icon-button class="toggle-visibility" (click)="togglePassword()" aria-label="切換密碼顯示">
+          <mat-icon>{{ showPassword() ? 'visibility_off' : 'visibility' }}</mat-icon>
+        </button>
+      </div>
       <div class="error" *ngIf="form.controls['password'].errors && form.controls['password'].touched">
         <span *ngIf="form.controls['password'].errors['required']">請輸入密碼</span>
         <span *ngIf="form.controls['password'].errors['minlength']">至少 6 個字元</span>
