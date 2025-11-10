@@ -1,0 +1,26 @@
+# Node modules
+/node_modules/
+
+# Compiled output
+/dist/
+/out-tsc/
+
+# IDE settings
+/.idea/
+/.vscode/
+
+# Environment files
+/src/environments/*.local.ts
+/src/environments/*.dev.ts
+
+# Logs
+npm-debug.log
+yarn-debug.log
+yarn-error.log
+
+# OS generated files
+.DS_Store
+Thumbs.db
+
+# Angular build cache
+/.angular/cache/
