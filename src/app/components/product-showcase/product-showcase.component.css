@@ -429,3 +429,7 @@
     height: 300px;
   }
 }
+
+.slides-with-transition {
+  transition: transform 0.5s cubic-bezier(.43,.64,.63,.99);
+}

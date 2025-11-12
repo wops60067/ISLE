@@ -1,0 +1,15 @@
+<div class="product-detail-dialog">
+  <img [src]="data.image" [alt]="data.name" class="dialog-product-image" *ngIf="data.image" />
+  <h2 class="dialog-product-name">{{ data.name }}</h2>
+  <div class="divider"></div>
+  <p class="dialog-product-description">{{ data.description }}</p>
+  <div class="dialog-product-extra" *ngIf="data.extra">
+    <p>{{ data.extra }}</p>
+  </div>
+  <div class="dialog-product-price">
+    {{ data.price }} <span style="font-size:1rem;font-family:Inter,sans-serif;">NTD</span>
+  </div>
+  <div class="dialog-actions">
+    <button mat-button (click)="dialogRef.close()">關閉</button>
+  </div>
+</div>

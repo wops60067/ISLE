@@ -1,0 +1,125 @@
+/* 浮窗本體 */
+.product-detail-dialog {
+  max-width: 500px;
+  width: 98vw;
+  background: linear-gradient(120deg, #faf6f2 25%, #e9ecef 100%);
+  border-radius: 36px;
+  box-shadow: 0 12px 48px rgba(30,30,30,0.18);
+  padding: 4rem 3.5rem 2.5rem 3.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  position: relative;
+}
+
+.dialog-product-image {
+  width: 430px;
+  height: 430px;
+  object-fit: cover;
+  margin-bottom: 2.7rem;
+  box-shadow: 0 12px 40px rgba(190, 121, 105, 0.10);
+  border-radius: 28px;
+  background: #fff;
+  border: 2.5px solid #eee;
+}
+
+.dialog-product-name {
+  font-size: 2.35rem;
+  font-weight: bold;
+  margin: 0 0 1.2rem 0;
+  color: #1a1a1a;
+  text-align: center;
+  letter-spacing: 0.02em;
+}
+
+.dialog-product-description {
+  color: #604a38;
+  font-size: 1.21rem;
+  text-align: center;
+  margin-bottom: 2.5rem;
+  letter-spacing: 0.01em;
+  line-height: 1.8;
+}
+
+.dialog-product-extra {
+  background: #f5f5f5;
+  border-radius: 16px;
+  padding: 1.1rem 1.5rem;
+  color: #855f48;
+  font-size: 1.13rem;
+  margin-bottom: 2.1rem;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.divider {
+  width: 82%;
+  height: 2.5px;
+  background: linear-gradient(90deg,#ececec 0%, #e0e0e0 60%, #fff 100%);
+  margin: 1.55rem 0 2.2rem 0;
+  border: none;
+  border-radius: 2.5px;
+}
+
+.dialog-product-price {
+  font-size: 1.59rem;
+  color: #be7969;
+  font-weight: 700;
+  background: linear-gradient(90deg,#d1ccbd 10%, #ffeccc 70%, #ffe6cd 100%);
+  padding: 0.38rem 2.2rem 0.38rem 2.2rem;
+  border-radius: 28px;
+  margin: 0 0 2rem 0;
+  box-shadow: 0 2px 16px rgba(235, 185, 143, 0.11);
+  letter-spacing: 0.03em;
+}
+
+.dialog-actions {
+  display: flex;
+  justify-content: flex-end;
+  width: 100%;
+  margin-top: 1.3rem;
+}
+
+.dialog-actions button[mat-button] {
+  background: #fff;
+  color: #be7969;
+  font-weight: 700;
+  border-radius: 36px;
+  box-shadow: 0 4px 20px rgba(190,121,105,0.13);
+  padding: 1.1rem 3.3rem;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 0.25rem;
+  font-size: 1.18rem;
+  transition: background 0.2s, color 0.2s, box-shadow 0.2s, transform 0.12s;
+}
+.dialog-actions button[mat-button]:hover {
+  background: #fdebe5;
+  color: #9c5145;
+  box-shadow: 0 10px 32px rgba(190,121,105,0.21);
+  transform: translateY(-2px) scale(1.09);
+}
+
+@media (max-width: 1100px) {
+  .dialog-product-image {
+    width: 300px;
+    height: 300px;
+  }
+  .product-detail-dialog {
+    padding: 1.2rem 0.5rem 1rem 0.5rem;
+  }
+}
+@media (max-width: 700px) {
+  .product-detail-dialog {
+    max-width: 99vw;
+    padding: 0.5rem 0.13rem 1.2rem 0.13rem;
+  }
+  .dialog-product-image {
+    width: 90vw;
+    height: 48vw;
+    min-height: 160px;
+    max-width: 370px;
+    max-height: 200px;
+  }
+}

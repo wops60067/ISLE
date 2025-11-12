@@ -5,8 +5,17 @@
       <h2 class="seasonal-title">—當季主打—</h2>
     </div>
     <div class="seasonal-carousel">
-      <div class="slides-wrapper">
-        <div class="slides" [style.transform]="'translateX(' + (-currentSlideIndex * 100) + '%)'">
+      <div class="slides-wrapper"
+          (touchstart)="onTouchStart($event)"
+          (touchmove)="onTouchMove($event)"
+          (touchend)="onTouchEnd($event)"
+          (mousedown)="onMouseDown($event)"
+          (mousemove)="onMouseMove($event)"
+          (mouseup)="onMouseUp($event)"
+          (mouseleave)="onMouseLeave($event)">
+        <div class="slides" 
+          [ngStyle]="{'transform': getSlideTransform()}"
+          [class.slides-with-transition]="transitionActive">
           <div class="slide" *ngFor="let item of seasonalItems">
             <img [src]="item.image" [alt]="item.title" class="slide-image" />
             <div class="slide-caption">
@@ -32,29 +41,9 @@
       <p class="section-subtitle">探索我們精心調製的香水，每一款都訴說著獨特的故事</p>
     </div>
     
-    <!-- 產品網格 -->
     <div class="products-grid">
       <!-- 產品卡片 1 -->
-      <!-- <div class="product-card featured">
-        <div class="product-image">
-          <div class="perfume-bottle-small bottle-1"></div>
-          <div class="product-badge">熱銷</div>
-        </div>
-        <div class="product-info">
-          <h3 class="product-name">香水1</h3>
-          <p class="product-description">產品描述1</p>
-          <div class="product-price">
-            <span class="current-price">NT$ 2,800</span>
-            <span class="original-price">NT$ 3,200</span>
-          </div>
-          <button mat-stroked-button class="add-to-cart-btn">
-            加入購物車
-          </button>
-        </div>
-      </div> -->
-      
-      <!-- 產品卡片 2 -->
-      <div class="product-card" *ngFor="let product of products">
+      <div class="product-card" *ngFor="let product of products" (click)="openProductDetail(product)"style="cursor:pointer;">
         <div class="product-image">
           <div class="perfume-bottle-small bottle-2"></div>
         </div>
@@ -64,41 +53,7 @@
           <div class="product-price">
             <span class="current-price">{{ product.price }}</span>
           </div>
-          <button mat-stroked-button class="add-to-cart-btn" style="color: black;" (click)="addCartItems(product)">
-            加入購物車
-          </button>
-        </div>
-      </div>
-      
-      <!-- 產品卡片 3 -->
-      <div class="product-card">
-        <div class="product-image">
-          <div class="perfume-bottle-small bottle-3"></div>
-        </div>
-        <div class="product-info">
-          <h3 class="product-name">香水3</h3>
-          <p class="product-description">產品描述3</p>
-          <div class="product-price">
-            <span class="current-price">NT$ 3,000</span>
-          </div>
-          <button mat-stroked-button class="add-to-cart-btn">
-            加入購物車
-          </button>
-        </div>
-      </div>
-      
-      <!-- 產品卡片 4 -->
-      <div class="product-card">
-        <div class="product-image">
-          <div class="perfume-bottle-small bottle-4"></div>
-        </div>
-        <div class="product-info">
-          <h3 class="product-name">香水4</h3>
-          <p class="product-description">產品描述4</p>
-          <div class="product-price">
-            <span class="current-price">NT$ 2,200</span>
-          </div>
-          <button mat-stroked-button class="add-to-cart-btn">
+          <button mat-stroked-button class="add-to-cart-btn" style="color: black;"(click)="$event.stopPropagation(); addCartItems(product)">
             加入購物車
           </button>
         </div>
