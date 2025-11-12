@@ -25,6 +25,7 @@ export class CartComponent implements OnInit {
   increaseQuantity(index: number) {
     this.cartItems[index].quantity++;
     this.saveCartItems();
+    this.service.nowItems();
   }
 
   // 減少商品數量
@@ -32,6 +33,7 @@ export class CartComponent implements OnInit {
     if (this.cartItems[index].quantity > 1) {
       this.cartItems[index].quantity--;
       this.saveCartItems();
+      this.service.nowItems();
     }
   }
 
@@ -40,6 +42,7 @@ export class CartComponent implements OnInit {
     if (confirm('確定要移除此商品嗎？')) {
       this.cartItems.splice(index, 1);
       this.saveCartItems();
+      this.service.nowItems();
     }
   }
 

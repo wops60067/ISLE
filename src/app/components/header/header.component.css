@@ -117,13 +117,14 @@
   background: #ff4444;
   color: white;
   border-radius: 50%;
-  width: 18px;
-  height: 18px;
+  width: 12px;
+  height: 12px;
   font-size: 0.7rem;
   display: flex;
   align-items: center;
   justify-content: center;
   font-weight: 600;
+  z-index: 1;
 }
 
 /* 響應式設計 */

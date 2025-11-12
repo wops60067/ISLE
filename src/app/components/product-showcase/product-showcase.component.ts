@@ -18,30 +18,29 @@ import { ProductDetailDialogComponent } from '../product-detail-dialog/product-d
 })
 export class ProductShowcaseComponent {
   products = [
-    { id: 1, name: '慕林 Mu Lin', description: '春日山林中，杏桃花飄落，木香與花香交織。', price: 2800 },
-    { id: 2, name: '疏影 Shadow Trace', description: '傍晚庭院，茉莉與桂花在風中若隱若現。', price: 3200 },
-    { id: 3, name: '無聲 Silent Form', description: '夜色中書房的氣味，紙張、皮革與木頭的沉靜融合。', price: 3500 },
-    { id: 4, name: '初雨 First Rain', description: '雨初歇時的空氣，帶有柑橘與青苔的清新氣味。', price: 3500 },
+    { id: 1, name_zh: '慕林', name_en: 'Mu Lin[30ml]', description: '春日山林中，杏桃花飄落，木香與花香交織。', price: 2800 },
+    { id: 2, name_zh: '疏影', name_en: 'Shadow Trace[30ml]', description: '傍晚庭院，茉莉與桂花在風中若隱若現。', price: 3200 },
+    { id: 3, name_zh: '無聲', name_en: 'Silent Form[30ml]', description: '夜色中書房的氣味，紙張、皮革與木頭的沉靜融合。', price: 3500 },
+    { id: 3, name_zh: '初雨', name_en: 'First Rain[30ml]', description: '雨初歇時的空氣，帶有柑橘與青苔的清新氣味。', price: 3500 }
   ];
-
   seasonalItems = [
     {
-      title: '慕林 Mu Lin',
+      title: '慕林 Mu Lin[30ml]',
       description: '春日山林中，杏桃花飄落，木香與花香交織。',
       image: 'assets/img/background.jpg'
     },
     {
-      title: '疏影 Shadow Trace',
+      title: '疏影 Shadow Trace[30ml]',
       description: '傍晚庭院，茉莉與桂花在風中若隱若現。',
       image: 'assets/img/logo.jpg'
     },
     {
-      title: '無聲 Silent Form',
+      title: '無聲 Silent Form[30ml]',
       description: '夜色中書房的氣味，紙張、皮革與木頭的沉靜融合。',
       image: 'assets/img/background.jpg'
     },
     {
-      title: '初雨 First Rain',
+      title: '初雨 First Rain[30ml]',
       description: '雨初歇時的空氣，帶有柑橘與青苔的清新氣味。',
       image: 'assets/img/background.jpg'
     }
