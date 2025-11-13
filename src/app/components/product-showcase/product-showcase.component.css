@@ -67,7 +67,7 @@
 /* 產品圖片區域 */
 .product-image {
   position: relative;
-  height: 300px;
+  height: 200px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -128,7 +128,7 @@
 
 /* 產品資訊 */
 .product-info {
-  padding: 2rem;
+  padding: 1.5rem;
 }
 
 .product-name {
@@ -141,7 +141,7 @@
 
 .product-name-en {
   font-size: 1.3rem;
-  font-weight: 700;
+  font-weight: 400;
   color: #1a1a1a;
   margin: 0 0 0.5rem 0;
   font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
@@ -153,17 +153,21 @@
   line-height: 1.5;
 }
 
-.product-price {
+/* .product-price {
   display: flex;
   align-items: center;
-  gap: 0.5rem;
-  margin-bottom: 1.5rem;
+  gap: 0.3rem;
+  margin-bottom: 0.3rem;
+} */
+
+.product-price {
+  text-align: center;
 }
 
 .current-price {
-  font-size: 1.5rem;
-  font-weight: 700;
-  color: #1a1a1a;
+  font-size: 1.3rem;
+  font-weight: 400;
+  color: #555555;
 }
 
 .original-price {
@@ -275,11 +279,11 @@
   }
 
   .product-image {
-    height: 220px;
+    height: 150px;
   }
   
   .current-price {
-    font-size: 1.3rem;
+    font-size: 1.1rem;
   }
   
   .add-to-cart-btn {

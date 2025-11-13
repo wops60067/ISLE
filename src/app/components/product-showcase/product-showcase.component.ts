@@ -18,10 +18,10 @@ import { ProductDetailDialogComponent } from '../product-detail-dialog/product-d
 })
 export class ProductShowcaseComponent {
   products = [
-    { id: 1, name_zh: '慕林', name_en: 'Mu Lin[30ml]', description: '春日山林中，杏桃花飄落，木香與花香交織。', price: 2800 },
-    { id: 2, name_zh: '疏影', name_en: 'Shadow Trace[30ml]', description: '傍晚庭院，茉莉與桂花在風中若隱若現。', price: 3200 },
-    { id: 3, name_zh: '無聲', name_en: 'Silent Form[30ml]', description: '夜色中書房的氣味，紙張、皮革與木頭的沉靜融合。', price: 3500 },
-    { id: 3, name_zh: '初雨', name_en: 'First Rain[30ml]', description: '雨初歇時的空氣，帶有柑橘與青苔的清新氣味。', price: 3500 }
+    { id: 1, name_zh: '慕林', name_en: 'Mu Lin[30ml]', description: '-春日山林中，杏桃花飄落，木香與花香交織。', price: 'NT$2,800' },
+    { id: 2, name_zh: '疏影', name_en: 'Shadow Trace[30ml]', description: '-傍晚庭院，茉莉與桂花在風中若隱若現。', price: 'NT$3,000' },
+    { id: 3, name_zh: '無聲', name_en: 'Silent Form[30ml]', description: '-夜色中書房的氣味，紙張、皮革與木頭的沉靜融合。', price: 'NT$3,200' },
+    { id: 3, name_zh: '初雨', name_en: 'First Rain[30ml]', description: '-雨初歇時的空氣，帶有柑橘與青苔的清新氣味。', price: 'NT$800' }
   ];
   seasonalItems = [
     {
