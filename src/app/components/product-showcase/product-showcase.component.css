@@ -139,6 +139,14 @@
   font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
 }
 
+.product-name-en {
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: #1a1a1a;
+  margin: 0 0 0.5rem 0;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
 .product-description {
   color: #666;
   margin: 0 0 1.7rem 0;
@@ -260,6 +268,14 @@
   
   .product-name {
     font-size: 1.5rem;
+  }
+
+  .product-name-en {
+    font-size: 1.3rem;
+  }
+
+  .product-image {
+    height: 220px;
   }
   
   .current-price {
