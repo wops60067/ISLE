@@ -82,3 +82,23 @@ button:not(:disabled):hover {
 .collapse-section > div:not(:first-child) {
   transition: max-height 0.18s cubic-bezier(0.4,0,0.2,1), opacity 0.18s;
 }
+
+@media (max-width: 600px) {
+  .product-container {
+    flex-direction: column !important;
+    gap: 16px !important;
+    align-items: stretch !important;
+  }
+  .carousel-container, .info-container {
+    min-width: 0 !important;
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+  .carousel-container {
+    justify-content: center;
+    margin-bottom: 8px;
+  }
+  .info-container {
+    padding: 0 6vw;
+  }
+}
