@@ -1,15 +1,38 @@
-<div class="product-detail-dialog">
-  <img [src]="data.image" [alt]="data.name" class="dialog-product-image" *ngIf="data.image" />
-  <h2 class="dialog-product-name">{{ data.name }}</h2>
-  <div class="divider"></div>
-  <p class="dialog-product-description">{{ data.description }}</p>
-  <div class="dialog-product-extra" *ngIf="data.extra">
-    <p>{{ data.extra }}</p>
+<div class="product-container">
+  <!-- 左區塊：圖片輪播 -->
+  <div class="carousel-container">
+    <div style="position: relative; width: 100%; max-width: 400px;">
+      <img [src]="images[currentImage]" alt="產品圖片">
+      <button 
+        (click)="prevImage()" 
+        style="position: absolute; top: 50%; left: -36px; transform: translateY(-50%);" 
+        [disabled]="currentImage === 0">◀</button>
+      <button 
+        (click)="nextImage()" 
+        style="position: absolute; top: 50%; right: -36px; transform: translateY(-50%);" 
+        [disabled]="currentImage === images.length - 1">▶</button>
+    </div>
   </div>
-  <div class="dialog-product-price">
-    {{ data.price }} <span style="font-size:1rem;font-family:Inter,sans-serif;">NTD</span>
-  </div>
-  <div class="dialog-actions">
-    <button mat-button (click)="dialogRef.close()">關閉</button>
+
+  <!-- 右區塊：文字介紹 -->
+  <div class="info-container">
+    <h2>{{ productName }}</h2>
+    <p>{{ description }}</p>
+
+    <!-- 成份 (可摺疊) -->
+    <div class="collapse-section" >
+      <div (click)="showIngredients = !showIngredients">
+        成份 <span>{{ showIngredients ? '▲' : '▼' }}</span>
+      </div>
+      <div *ngIf="showIngredients">{{ ingredients }}</div>
+    </div>
+
+    <!-- 用法 (可摺疊) -->
+    <div class="collapse-section">
+      <div (click)="showUsage = !showUsage">
+        用法 <span>{{ showUsage ? '▲' : '▼' }}</span>
+      </div>
+      <div *ngIf="showUsage">{{ usage }}</div>
+    </div>
   </div>
 </div>

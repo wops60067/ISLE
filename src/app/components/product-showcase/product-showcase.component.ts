@@ -5,6 +5,7 @@ import { CartItem, CartService } from '../../services/cart.service';
 import { CommonModule } from '@angular/common';
 import { MatDialog } from '@angular/material/dialog';
 import { ProductDetailDialogComponent } from '../product-detail-dialog/product-detail-dialog.component';
+import { Route, Router } from '@angular/router';
 
 @Component({
   selector: 'app-product-showcase',
@@ -18,10 +19,10 @@ import { ProductDetailDialogComponent } from '../product-detail-dialog/product-d
 })
 export class ProductShowcaseComponent {
   products = [
-    { id: 1, name_zh: '慕林', name_en: 'Mu Lin[30ml]', description: '-春日山林中，杏桃花飄落，木香與花香交織。', price: 'NT$2,800' },
-    { id: 2, name_zh: '疏影', name_en: 'Shadow Trace[30ml]', description: '-傍晚庭院，茉莉與桂花在風中若隱若現。', price: 'NT$3,000' },
-    { id: 3, name_zh: '無聲', name_en: 'Silent Form[30ml]', description: '-夜色中書房的氣味，紙張、皮革與木頭的沉靜融合。', price: 'NT$3,200' },
-    { id: 3, name_zh: '初雨', name_en: 'First Rain[30ml]', description: '-雨初歇時的空氣，帶有柑橘與青苔的清新氣味。', price: 'NT$800' }
+    { id: 1, name_zh: '慕林[30ml]', name_en: 'Mu Lin', description: '-春日山林中，杏桃花飄落，木香與花香交織。', price: 'NT$2,800' },
+    { id: 2, name_zh: '疏影[30ml]', name_en: 'Shadow Trace', description: '-傍晚庭院，茉莉與桂花在風中若隱若現。', price: 'NT$3,000' },
+    { id: 3, name_zh: '無聲[30ml]', name_en: 'Silent Form', description: '-夜色中書房的氣味，紙張、皮革與木頭的沉靜融合。', price: 'NT$3,200' },
+    { id: 3, name_zh: '初雨[30ml]', name_en: 'First Rain', description: '-雨初歇時的空氣，帶有柑橘與青苔的清新氣味。', price: 'NT$800' }
   ];
   seasonalItems = [
     {
@@ -145,7 +146,7 @@ export class ProductShowcaseComponent {
     this.transitionActive = true;
   }
 
-  constructor(private service:CartService, private dialog: MatDialog){};
+  constructor(private service:CartService, private router: Router){};
 
   addCartItems(product: any) {
     const item: CartItem = {
@@ -173,10 +174,7 @@ export class ProductShowcaseComponent {
     this.currentSlideIndex = index;
   }
 
-  openProductDetail(product:any) {
-    this.dialog.open(ProductDetailDialogComponent, {
-      data: product,
-      width: '1500px',
-    });
+  goToProduct(product: any) {
+    this.router.navigate(['/product', product.id]);
   }
 }

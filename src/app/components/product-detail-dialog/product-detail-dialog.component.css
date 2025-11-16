@@ -1,125 +1,84 @@
-/* 浮窗本體 */
-.product-detail-dialog {
-  max-width: 500px;
-  width: 98vw;
-  background: linear-gradient(120deg, #faf6f2 25%, #e9ecef 100%);
-  border-radius: 36px;
-  box-shadow: 0 12px 48px rgba(30,30,30,0.18);
-  padding: 4rem 3.5rem 2.5rem 3.5rem;
+:host {
+  display: block;
+  background-color: #f8f9fa;
+  min-height: 100vh;
+}
+
+.product-container {
   display: flex;
-  flex-direction: column;
+  gap: 32px;
+  max-width: 1200px;
+  min-height: calc(100vh - 80px);
+  margin: 80px auto 0 auto;
+  padding: 40px 32px;
   align-items: center;
-  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-  position: relative;
 }
 
-.dialog-product-image {
-  width: 430px;
-  height: 430px;
-  object-fit: cover;
-  margin-bottom: 2.7rem;
-  box-shadow: 0 12px 40px rgba(190, 121, 105, 0.10);
-  border-radius: 28px;
-  background: #fff;
-  border: 2.5px solid #eee;
-}
-
-.dialog-product-name {
-  font-size: 2.35rem;
-  font-weight: bold;
-  margin: 0 0 1.2rem 0;
-  color: #1a1a1a;
-  text-align: center;
-  letter-spacing: 0.02em;
-}
-
-.dialog-product-description {
-  color: #604a38;
-  font-size: 1.21rem;
-  text-align: center;
-  margin-bottom: 2.5rem;
-  letter-spacing: 0.01em;
-  line-height: 1.8;
-}
-
-.dialog-product-extra {
-  background: #f5f5f5;
-  border-radius: 16px;
-  padding: 1.1rem 1.5rem;
-  color: #855f48;
-  font-size: 1.13rem;
-  margin-bottom: 2.1rem;
-  width: 100%;
-  box-sizing: border-box;
-}
-
-.divider {
-  width: 82%;
-  height: 2.5px;
-  background: linear-gradient(90deg,#ececec 0%, #e0e0e0 60%, #fff 100%);
-  margin: 1.55rem 0 2.2rem 0;
-  border: none;
-  border-radius: 2.5px;
-}
-
-.dialog-product-price {
-  font-size: 1.59rem;
-  color: #be7969;
-  font-weight: 700;
-  background: linear-gradient(90deg,#d1ccbd 10%, #ffeccc 70%, #ffe6cd 100%);
-  padding: 0.38rem 2.2rem 0.38rem 2.2rem;
-  border-radius: 28px;
-  margin: 0 0 2rem 0;
-  box-shadow: 0 2px 16px rgba(235, 185, 143, 0.11);
-  letter-spacing: 0.03em;
-}
-
-.dialog-actions {
+.carousel-container {
+  flex: 1;
   display: flex;
-  justify-content: flex-end;
+  align-items: center;
+  justify-content: center;
+  min-width: 320px;
+}
+img {
   width: 100%;
-  margin-top: 1.3rem;
+  border-radius: 8px;
+  box-shadow: 0 1px 8px rgba(0,0,0,0.06);
+  background: #f4f7fa;
 }
 
-.dialog-actions button[mat-button] {
-  background: #fff;
-  color: #be7969;
-  font-weight: 700;
-  border-radius: 36px;
-  box-shadow: 0 4px 20px rgba(190,121,105,0.13);
-  padding: 1.1rem 3.3rem;
-  margin-left: auto;
-  margin-right: auto;
-  margin-top: 0.25rem;
-  font-size: 1.18rem;
-  transition: background 0.2s, color 0.2s, box-shadow 0.2s, transform 0.12s;
+button {
+  background: #eee;
+  border: none;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  font-size: 20px;
+  cursor: pointer;
+  transition: background 0.2s;
 }
-.dialog-actions button[mat-button]:hover {
-  background: #fdebe5;
-  color: #9c5145;
-  box-shadow: 0 10px 32px rgba(190,121,105,0.21);
-  transform: translateY(-2px) scale(1.09);
+button:disabled {
+  opacity: 0.3;
+  cursor: not-allowed;
+}
+button:not(:disabled):hover {
+  background: #dbeafe;
 }
 
-@media (max-width: 1100px) {
-  .dialog-product-image {
-    width: 300px;
-    height: 300px;
-  }
-  .product-detail-dialog {
-    padding: 1.2rem 0.5rem 1rem 0.5rem;
-  }
+.info-container {
+  flex: 1;
+  min-width: 320px;
+  color: #1a1a1a;
 }
-@media (max-width: 700px) {
-  .product-detail-dialog {
-    max-width: 99vw;
-    padding: 0.5rem 0.13rem 1.2rem 0.13rem;
-  }
-  .dialog-product-image {
-    width: 90vw;
-    height: 48vw;
-    min-height: 160px;
-    max-width: 370px;
-    max-height: 200px;
-  }
+.info-container h2 {
+  margin-top: 0;
+  margin-bottom: 10px;
+  font-size: 2rem;
+  color: #1a1a1a;
+}
+.info-container p {
+  margin-top: 0;
+  margin-bottom: 24px;
+}
+
+.collapse-section {
+  border-bottom: 1px solid #e5e7eb;
+  padding-bottom: 12px;
+  margin-bottom: 12px;
+  transition: background 0.2s;
+}
+.collapse-section > div:first-child {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 1.02rem;
+  padding: 6px 0;
+  transition: color 0.2s;
+}
+.collapse-section > div:first-child:hover {
+  color: #1976d2;
+}
+.collapse-section > div:not(:first-child) {
+  transition: max-height 0.18s cubic-bezier(0.4,0,0.2,1), opacity 0.18s;
 }
