@@ -22,6 +22,11 @@
     <p>{{ description }}</p>
     <p>{{ description_en }}</p>
     <p>NT${{ price }}</p>
+    <div class="quantity-box">
+      <span class="qty-control" (click)="decrease()">−</span>
+      <input class="qty-input" type="number" [(ngModel)]="quantity" min="1">
+      <span class="qty-control" (click)="increase()">+</span>
+    </div>
     <button class="add-to-cart-btn" (click)="addCartItems()">加入購物車</button>
     
     <!-- 成份 (可摺疊) -->

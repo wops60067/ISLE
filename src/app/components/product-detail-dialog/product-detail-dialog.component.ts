@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { CommonModule } from '@angular/common';
 import { CartService } from '../../services/cart.service';
+import { FormsModule } from '@angular/forms';
 
 export interface CartItem {
   id: number;
@@ -12,7 +13,7 @@ export interface CartItem {
 
 @Component({
   selector: 'app-product-detail-dialog',
-  imports: [CommonModule],
+  imports: [CommonModule,FormsModule],
   templateUrl: './product-detail-dialog.component.html',
   styleUrl: './product-detail-dialog.component.css'
 })
@@ -120,9 +121,19 @@ export class ProductDetailDialogComponent {
       id: this.id,
       name: this.productName,
       price: this.price,
-      quantity: 1
+      quantity: this.quantity
     };
 
     this.service.addToCart(item);
+  }
+
+  quantity = 1;
+  increase() {
+    this.quantity++;
+  }
+  decrease() {
+    if (this.quantity > 1) {
+      this.quantity--;
+    }
   }
 }

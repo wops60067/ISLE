@@ -106,6 +106,38 @@ img {
   box-shadow: 0 4px 18px -6px #0002;
   cursor: pointer;
 }
+
+.quantity-box {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 140px;
+  padding: 8px 14px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+.qty-control {
+  font-size: 20px;
+  cursor: pointer;
+  user-select: none;
+  padding: 0 10px;
+}
+.qty-control:hover {
+  color: #555;
+}
+.qty-input {
+  width: 50px;
+  text-align: center;
+  border: none;
+  outline: none;
+  font-size: 16px;
+}
+.qty-input::-webkit-outer-spin-button,
+.qty-input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
 @media (max-width: 600px) {
   .product-container {
     flex-direction: column !important;
