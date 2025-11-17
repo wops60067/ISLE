@@ -1,0 +1,19 @@
+<!-- 浮動圓形聊天按鈕 -->
+<div class="chat-widget-fab" (click)="toggleChat()" *ngIf="!isChatOpen">
+  <span class="material-icons">chat</span>
+</div>
+
+<!-- 展開的聊天對話框 -->
+<div class="chat-widget-box" *ngIf="isChatOpen">
+  <div class="chat-widget-header">
+    ISLE Support
+    <span class="material-icons close-btn" (click)="toggleChat()">close</span>
+  </div>
+  <div class="chat-widget-messages">
+    <div class="chat-message">您好！有什麼需要協助的嗎？</div>
+  </div>
+  <div class="chat-widget-input">
+    <input type="text" placeholder="請輸入訊息..." disabled>
+    <button disabled>送出</button>
+  </div>
+</div>
