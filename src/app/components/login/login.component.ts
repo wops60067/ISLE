@@ -24,6 +24,7 @@ export class LoginComponent {
             email: ['', [Validators.required, Validators.email]],
             password: ['', [Validators.required, Validators.minLength(6)]]
         });
+        window.scrollTo({ top : 0 ,behavior: 'auto' })
     }
 
     togglePassword(): void {

@@ -22,7 +22,7 @@ export class ProductShowcaseComponent {
     { id: 1, name_zh: '慕林[30ml]', name_en: 'Mu Lin', description: '-春日山林中，杏桃花飄落，木香與花香交織。', price: 'NT$2,800' },
     { id: 2, name_zh: '疏影[30ml]', name_en: 'Shadow Trace', description: '-傍晚庭院，茉莉與桂花在風中若隱若現。', price: 'NT$3,000' },
     { id: 3, name_zh: '無聲[30ml]', name_en: 'Silent Form', description: '-夜色中書房的氣味，紙張、皮革與木頭的沉靜融合。', price: 'NT$3,200' },
-    { id: 3, name_zh: '初雨[30ml]', name_en: 'First Rain', description: '-雨初歇時的空氣，帶有柑橘與青苔的清新氣味。', price: 'NT$800' }
+    { id: 4, name_zh: '初雨[30ml]', name_en: 'First Rain', description: '-雨初歇時的空氣，帶有柑橘與青苔的清新氣味。', price: 'NT$800' }
   ];
   seasonalItems = [
     {

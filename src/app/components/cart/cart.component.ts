@@ -12,7 +12,9 @@ import { CartItem, CartService } from '../../services/cart.service';
 })
 export class CartComponent implements OnInit {
 
-  constructor(private service:CartService){};
+  constructor(private service:CartService){
+    window.scrollTo({ top : 0 ,behavior: 'auto' })
+  };
 
   cartItems: CartItem[] = [];
   ngOnInit() {
