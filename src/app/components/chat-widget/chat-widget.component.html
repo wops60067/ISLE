@@ -11,9 +11,21 @@
   </div>
   <div class="chat-widget-messages">
     <div class="chat-message">您好！有什麼需要協助的嗎？</div>
+    <div class="quick-questions">
+      <div class="quick-question-label">常見問題：</div>
+      <button 
+        *ngFor="let question of quickQuestions" 
+        class="quick-question-btn"
+        [class.selected]="selectedQuestion === question"
+        (click)="selectQuestion(question)"
+        [disabled]="sending">
+        {{ question }}
+      </button>
+    </div>
+    <div class="chat-message">我們已收到您的來信！</div>
   </div>
   <div class="chat-widget-input">
-    <input type="text" placeholder="請輸入訊息..." disabled>
-    <button disabled>送出</button>
+    <input type="text" placeholder="請輸入訊息..." [(ngModel)]="message" [disabled]="sending || !selectedQuestion">
+    <button (click)="send()" [disabled]="!message.trim() || sending">{{ sending ? '寄送中…' : '送出' }}</button>
   </div>
 </div>
